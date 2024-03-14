@@ -8,8 +8,18 @@ module.exports = {
     './app/views/**/*',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'white-75': 'rgba(255, 255, 255, 0.75)',
+      },
+    },
   },
   plugins: [],
+  purge: {
+    // ...
+    options: {
+      safelist: ['bg-opacity-75'],
+    },
+  },
 }
 
