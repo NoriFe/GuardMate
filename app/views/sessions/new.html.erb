@@ -1,39 +1,36 @@
-<div class="flex justify-center items-center min-h-screen bg-gray-100">
-  <!-- Content Wrapper -->
-  <div class="w-full max-w-4xl px-4">
-    <div class="flex justify-center">
-      <!-- Picture (visible on medium screens and larger) -->
-      <div class="hidden md:block md:w-1/2">
-        <img src="your-image-url" alt="Your Image" class="w-full h-full object-cover" />
-      </div>
+<div class="relative overflow-hidden bg-cover bg-no-repeat p-4 md:p-12 text-center" style="background-image: url('<%= asset_path('AI.png') %>'); background-size: cover;">
+ 
+    <div class="flex justify-center items-center h-screen relative">
+      <!-- Background Image -->
 
-      <!-- Login Form -->
-      <div class="md:w-1/2 md:ml-8">
-        <h1 class="text-3xl font-bold mb-4">Login</h1>
-        <%= form_with(model: User.new, url: users_path, method: :post, class: "w-full max-w-sm") do |f| %>
-          <div class="mb-4">
-            <%= f.label :name, class: "block text-gray-700 font-bold mb-2" %>
-            <%= f.text_field :name, class: "form-input w-full" %>
-          </div>
+      <div class="relative w-full max-w-md p-8 bg-white rounded-lg shadow-lg px-4 z-10">
+        <!-- Login Form -->
+        <div class="relative">
+          <h1 class="text-3xl font-bold mb-4 text-center">Login</h1>
+          <%= form_with(model: User.new, url: users_path, method: :post, class: "") do |f| %>
+            <div class="mb-4">
+              <%= f.label :name, class: "block text-gray-700 font-bold mb-2 " %>
+              <%= f.text_field :name, class: "form-input w-full rounded" %>
+            </div>
 
-          <div class="mb-4">
-            <%= f.label :email, class: "block text-gray-700 font-bold mb-2" %>
-            <%= f.email_field :email, class: "form-input w-full" %>
-          </div>
+            <div class="mb-4">
+              <%= f.label :email, class: "block text-gray-700 font-bold mb-2" %>
+              <%= f.email_field :email, class: "form-input w-full" %>
+            </div>
 
-          <div class="mb-4">
-            <%= f.label :password, class: "block text-gray-700 font-bold mb-2" %>
-            <%= f.password_field :password, class: "form-input w-full" %>
-          </div>
+            <div class="mb-4">
+              <%= f.label :password, class: "block text-gray-700 font-bold mb-2" %>
+              <%= f.password_field :password, class: "form-input w-full" %>
+            </div>
 
-          <div class="mb-6">
-            <%= f.label :password_confirmation, class: "block text-gray-700 font-bold mb-2" %>
-            <%= f.password_field :password_confirmation, class: "form-input w-full" %>
-          </div>
+            <div class="mb-6">
+              <%= f.label :password_confirmation, class: "block text-gray-700 font-bold mb-2" %>
+              <%= f.password_field :password_confirmation, class: "form-input w-full" %>
+            </div>
 
-          <%= f.submit 'Login', class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
-        <% end %>
+            <%= f.submit 'Login', class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
