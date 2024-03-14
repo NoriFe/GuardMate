@@ -4,6 +4,11 @@ ruby "3.2.2"
 
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'webpacker', '~> 5.0'
+
+gem 'tailwindcss-rails'
+
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 
