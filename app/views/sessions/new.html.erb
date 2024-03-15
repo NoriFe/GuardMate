@@ -1,35 +1,34 @@
-<div class="overflow-hidden bg-cover bg-no-repeat text-center" style="background-image: url('<%= asset_path('AI.png') %>'); background-size: cover; background-position: center;"> 
-    <div class="flex justify-center items-center h-screen ">
-      <!-- Background Image -->
+<div class="flex h-screen w-full items-center justify-center bg-gray-900 bg-cover bg-no-repeat" style="background-image: url('<%= asset_path('AI.png') %>'); background-size: cover; background-position: center;">
+  <!-- Background Image -->  
+  
+    <div class="rounded-xl bg-gray-800 bg-opacity-50 px-16 py-10 shadow-lg backdrop-blur-md max-sm:px-8">
+      <!-- Login Form -->
+      <div class="">
+        <h1 class="text-3xl font-bold mb-4 text-center">Login</h1>
+        <%= form_with(model: User.new, url: users_path, method: :post, class: "p-4") do |f| %>
+          <div class="mb-4">
+            <%= f.label :name, class: "block text-gray-700 font-bold mb-2 " %>
+            <%= f.text_field :name, class: "form-input rounded" %>
+          </div>
 
-     <div class="rounded-lg shadow-lg m-4" style="background-color: rgba(255, 255, 255, 0.75);">
-        <!-- Login Form -->
-        <div class="">
-          <h1 class="text-3xl font-bold mb-4 text-center">Login</h1>
-          <%= form_with(model: User.new, url: users_path, method: :post, class: "p-4") do |f| %>
-            <div class="mb-4">
-              <%= f.label :name, class: "block text-gray-700 font-bold mb-2 " %>
-              <%= f.text_field :name, class: "form-input rounded" %>
-            </div>
+          <div class="mb-4">
+            <%= f.label :email, class: "block text-gray-700 font-bold mb-2" %>
+            <%= f.email_field :email, class: "form-input " %>
+          </div>
 
-            <div class="mb-4">
-              <%= f.label :email, class: "block text-gray-700 font-bold mb-2" %>
-              <%= f.email_field :email, class: "form-input " %>
-            </div>
+          <div class="mb-4">
+            <%= f.label :password, class: "block text-gray-700 font-bold mb-2" %>
+            <%= f.password_field :password, class: "form-input " %>
+          </div>
 
-            <div class="mb-4">
-              <%= f.label :password, class: "block text-gray-700 font-bold mb-2" %>
-              <%= f.password_field :password, class: "form-input " %>
-            </div>
+          <div class="mb-6">
+            <%= f.label :password_confirmation, class: "block text-gray-700 font-bold mb-2" %>
+            <%= f.password_field :password_confirmation, class: "form-input" %>
+          </div>
 
-            <div class="mb-6">
-              <%= f.label :password_confirmation, class: "block text-gray-700 font-bold mb-2" %>
-              <%= f.password_field :password_confirmation, class: "form-input" %>
-            </div>
-
-            <%= f.submit 'Login', class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full mb-4" %>
-          <% end %>
-        </div>
+          <%= f.submit 'Login', class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full mb-4" %>
+        <% end %>
       </div>
     </div>
-  </div>
+  
+</div>
